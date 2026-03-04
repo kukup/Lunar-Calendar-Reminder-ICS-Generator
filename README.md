@@ -208,10 +208,35 @@ git push
 
 ### Apple Calendar
 
+Use the published ICS URL:
+
+```text
+https://kukup.github.io/Lunar-Calendar-Reminder-ICS-Generator/lunar_reminder.ics
+```
+
+#### On Mac
+
 1. Open **Calendar**
-2. Go to **File** → **New Calendar Subscription** or use iPhone/iPad Calendar subscription settings
+2. Go to **File** → **New Calendar Subscription**
 3. Paste the public ICS URL
-4. Save
+4. Click **Subscribe**
+5. Choose your preferred refresh settings
+6. Save
+
+#### On iPhone or iPad
+
+1. Open **Settings**
+2. Go to **Apps** → **Calendar**
+3. Tap **Calendar Accounts**
+4. Tap **Add Account**
+5. Tap **Other**
+6. Tap **Add Subscribed Calendar**
+7. Paste the public ICS URL
+8. Tap **Next**
+9. Optionally edit the description
+10. Tap **Save**
+
+After saving, the subscribed calendar will appear in the Calendar app.
 
 ### Google Calendar
 
