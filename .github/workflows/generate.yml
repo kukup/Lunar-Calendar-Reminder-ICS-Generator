@@ -1,0 +1,29 @@
+name: Generate Lunar ICS
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 1 1 *"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v3
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Generate ICS
+        run: uv run python generate.py
+
+      - name: Commit ICS
+        run: |
+          git config --global user.name github-actions
+          git config --global user.email actions@github.com
+          git add lunar_reminder.ics
+          git commit -m "Update lunar calendar" || echo "No change"
+          git push
