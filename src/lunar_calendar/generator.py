@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 from lunardate import LunarDate
@@ -98,6 +98,7 @@ def build_calendar(start_year: int = START_YEAR, end_year: int = END_YEAR) -> st
                             f"DTSTAMP:{dtstamp}",
                             f"SUMMARY:{_escape_ics_text(event_title)}",
                             f"DTSTART;VALUE=DATE:{_format_date(solar)}",
+                            f"DTEND;VALUE=DATE:{_format_date(solar + timedelta(days=1))}",
                             f"DESCRIPTION:{_escape_ics_text(EVENT_DESCRIPTION)}",
                         ]
                     )
